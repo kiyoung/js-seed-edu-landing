@@ -12,15 +12,13 @@ app.listen(8080, function () {
 
 // main page
 app.get('/', (req, res) =>{
-    try {
-        // res.sendFile('index.ejs', {root: 'views'});
         res.render('index');
-    } catch (err) {
-        console.error(err);
-    }
 })
 
 app.get('/consulting', (req, res) =>{
-    res.render('consulting.ejs');
+    res.render('consulting');
 })
 
+app.get('/reference_table', (req, res) =>{
+    res.render('reference_table');
+})

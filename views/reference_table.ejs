@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('head.html')%>
+    <title>Reference Table</title>
+</head>
+<body>
+<%- include ('navbar.html')%>
+
+<p>
+    <a aria-controls="collapseExample" aria-expanded="false" class="btn btn-primary"
+       data-toggle="collapse" href="#collapseExample" role="button">
+        Link with href
+    </a>
+    <button aria-controls="collapseExample" aria-expanded="false" class="btn btn-primary"
+            data-target="#collapseExample" data-toggle="collapse" type="button">
+        Button with data-target
+    </button>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="card card-body">
+        Anim pariatur cliche reprehenderit......
+    </div>
+</div>
+
+<div class="custom-control custom-radio custom-control-inline">
+    <input type="radio" id="customRadioInline1" name="customRadioInline" class="custom-control-input">
+    <label class="custom-control-label" for="customRadioInline1">1차</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+    <input type="radio" id="customRadioInline2" name="customRadioInline" class="custom-control-input">
+    <label class="custom-control-label" for="customRadioInline2">2차</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+    <input type="radio" id="customRadioInline3" name="customRadioInline" class="custom-control-input">
+    <label class="custom-control-label" for="customRadioInline3">3차</label>
+</div>
+
+
+
+<%- include ('footer.html') %>
+</body>
+</html>
