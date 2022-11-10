@@ -3,8 +3,8 @@ const https = require("https")
 const fs = require("fs")
 
 var privateKey = fs.readFileSync("/etc/letsencrypt/live/seedconsulting.co.kr/privkey.pem")
-var certificate = fs.readFileSync("/etc/letsencrypt/live/seedconsulting.co.kr/fullchain.pem")
-var ca = fs.readFileSync("/etc/letsencrypt/live/{hostname}/chain.pem")
+var certificate = fs.readFileSync("/etc/letsencrypt/live/seedconsulting.co.kr/cert.pem")
+var ca = fs.readFileSync("/etc/letsencrypt/live/seedconsulting.co.kr/chain.pem")
 const credentials = { key: privateKey, cert: certificate, ca: ca }
 
 const express = require('express');
