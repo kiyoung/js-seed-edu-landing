@@ -1,3 +1,12 @@
+const http = require("http")
+const https = require("https")
+const fs = require("fs")
+
+var privateKey = fs.readFileSync("/etc/letsencrypt/live/seedconsulting.co.kr/privkey.pem")
+var certificate = fs.readFileSync("/etc/letsencrypt/live/seedconsulting.co.kr/fullchain.pem")
+var ca = fs.readFileSync("/etc/letsencrypt/live/{hostname}/chain.pem")
+const credentials = { key: privateKey, cert: certificate, ca: ca }
+
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -6,9 +15,12 @@ app.use(express.static('public'));
 // const client = require('') // DB
 app.set('view engine', 'ejs');
 
-app.listen(80, function () {
-    console.log('listening on port 80');
-});
+// app.listen(80, function () {
+//     console.log('listening on port 80');
+// });
+
+http.createServer(app).listen(80)
+https.createServer(credentials, app).listen(443)
 
 // main page
 app.get('/', (req, res) =>{
