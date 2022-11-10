@@ -41,7 +41,8 @@
 /*  1. Template default CSS
 /*----------------------------------------*/
 /*-- Google Font --*/
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
+/* @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900"); */
+@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
 /*-- Common Style --*/
 @media only screen and (min-width: 1200px) {
   .container {
@@ -81,7 +82,8 @@ body {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  font-family: "Roboto", sans-serif;
+  /* font-family: "Roboto", sans-serif; */
+  font-family: "Nanum Gothic", sans-serif;
   color: #333;
 }
 
@@ -92,7 +94,8 @@ h4,
 h5,
 h6 {
   color: #333333;
-  font-family: "Roboto", sans-serif;
+  /* font-family: "Roboto", sans-serif; */
+  font-family: "Nanum Gothic", sans-serif;
   font-weight: 400;
   margin-top: 0;
 }
