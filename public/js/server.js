@@ -6,8 +6,8 @@ app.use(express.static('public'));
 // const client = require('') // DB
 app.set('view engine', 'ejs');
 
-app.listen(8080, function () {
-    console.log('listening on port 8080');
+app.listen(80, function () {
+    console.log('listening on port 80');
 });
 
 // main page
