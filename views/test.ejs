@@ -1,46 +1,243 @@
 <!doctype html>
 <html lang="en">
 <!-- file for test -->
+
 <head>
     <meta charset="utf-8">
-    <link href=
-          "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
-          rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-1.10.2.js">
-    </script>
-    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js">
-    </script>
-
-    <script>
-        $(function() {
-            $("#gfg").tabs();
-            $("#gfg").tabs("load", 0);
-        });
-    </script>
+    <%- include ('head.html') %>
 </head>
 
 <body>
-<h1>GeeksforGeeks</h1>
-<h3>jQuery UI tabs load(index) method</h3>
 
-<div id="gfg">
-    <ul>
-        <li><a href="#gfg1">Tab 1</a></li>
-        <li><a href="#gfg2">Tab 2</a></li>
-        <li><a href="#gfg3">Tab 3</a></li>
-    </ul>
-
-    <div id="gfg1">
-        <p>tab Number -1</p>
+<form class="gform" method="post" data-email="seedconsulting2022@gmail.com"
+      action="https://script.google.com/macros/s/AKfycbwva-BAVS5b8Re4Km1TBAcYj4HAyvQ8DO_7aHi48SqeUlM5jzvO8mDaAu7p3pMsetwC/exec" target="frAttachFiles">
+    <legend class="col-form-label col-sm-2 float-sm-left pt-0">성별</legend>
+    <div class="col-sm-10">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="성별" id="성별"
+                   value="남자">
+            <label class="form-check-label" for="성별">남자</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="성별" id="성별"
+                   value="여자">
+            <label class="form-check-label" for="성별">여자</label>
+        </div>
     </div>
 
-    <div id="gfg2">
-        <p>tab Number -2</p>
+    <div class="form-group row">
+        <label for="이름" class="col-sm-2 col-form-label">이름</label>
+        <div class="col-sm-10 form-elements">
+            <input type="text" class="form-control" id="이름" name="이름" placeholder="이름을 입력하세요"
+                   style="width:200px;" required>
+        </div>
     </div>
-    <div id="gfg3">
-        <p>tab Number -3</p>
+    <div class="form-group row">
+        <label for="email" class="col-sm-2 col-form-label">이메일</label>
+        <div class="col-sm-10 form-elements">
+            <input type="email" class="form-control" id="email" name="email" placeholder="이메일 주소"
+                   style="width:300px;" required>
+        </div>
     </div>
-</div>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">국어</th>
+            <th scope="col">수학</th>
+            <th scope="col">영어</th>
+            <th scope="col" colspan="3">탐구</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="국어" id="국어"
+                               value="화법과 작문" checked>
+                        <label class="form-check-label" for="국어">화작</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="국어" id="inlineRadio2"
+                               value="언어와 매체">
+                        <label class="form-check-label" for="inlineRadio2">언매</label>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="수학" id="exampleRadios1"
+                               value="확률과 통계" checked>
+                        <label class="form-check-label" for="exampleRadios1">확통</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="수학" id="exampleRadios2"
+                               value="미적분">
+                        <label class="form-check-label" for="exampleRadios2">미적</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="수학" id="exampleRadios3"
+                               value="기하학">
+                        <label class="form-check-label" for="exampleRadios3">기하</label>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <!--            영어 영역-->
+            </td>
+            <td>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="탐구" id="탐구"
+                               value="과탐" checked>
+                        <label class="form-check-label" for="탐구">
+                            과탐
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="탐구" id="탐구"
+                               value="사탐">
+                        <label class="form-check-label" for="탐구">
+                            사탐
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="탐구" id="탐구"
+                               value="직탐">
+                        <label class="form-check-label" for="탐구">
+                            직탐
+                        </label>
+                    </div>
+                </div>
+            </td>
+            <td colspan="2">
+                <input type="text" class="form-control" id="subject" placeholder="과목1 직접입력" style="width:150px;"
+                       required>
+                <input type="text" class="form-control" id="subject" placeholder="과목2 직접입력" style="width:150px;">
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">원점수(입력)</th>
+            <td>
+                <input type="text" class="form-control" id="국어" placeholder="점수 입력" style="width:100px;" required>
+            </td>
+            <td>
+                <input type="text" class="form-control" id="score" placeholder="점수 입력" style="width:100px;"
+                       required>
+            </td>
+            <td>
+                <input type="text" class="form-control" id="score" placeholder="점수 입력" style="width:100px;"
+                       required>
+            </td>
+            <td>
+                <input type="text" class="form-control" id="score" placeholder="과목1 점수입력" style="width:150px;"
+                       required>
+            </td>
+            <td colspan="2">
+                <input type="text" class="form-control" id="score" placeholder="과목2 점수입력" style="width:150px;">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="7">수시 대학별 고사 일정 입력</td>
+        </tr>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">1</th>
+            <th scope="col">2</th>
+            <th scope="col">3</th>
+            <th scope="col">4</th>
+            <th scope="col">5</th>
+            <th scope="col">6</th>
+        </tr>
+        <tr>
+            <td>학교/과</td>
+            <td>
+                <input type="text" class="form-control" id="univDept1" placeholder="대학/학과" style="width:150px;">
+            </td>
+            <td>
+                <input type="text" class="form-control" id="univDept2" placeholder="대학/학과" style="width:150px;">
+            </td>
+            <td>
+                <input type="text" class="form-control" id="univDept3" placeholder="대학/학과" style="width:150px;">
+            </td>
+            <td>
+                <input type="text" class="form-control" id="univDept4" placeholder="대학/학과" style="width:150px;">
+            </td>
+            <td>
+                <input type="text" class="form-control" id="univDept5" placeholder="대학/학과" style="width:150px;">
+            </td>
+            <td>
+                <input type="text" class="form-control" id="univDept6" placeholder="대학/학과" style="width:150px;">
+            </td>
+        </tr>
+        <tr>
+            <td>날짜</td>
+            <td>
+                <input type="date" class="form-control" id="date1" style="width:150px;">
+            </td>
+            <td>
+                <input type="date" class="form-control" id="date2" style="width:150px;">
+            </td>
+            <td>
+                <input type="date" class="form-control" id="date3" style="width:150px;">
+            </td>
+            <td>
+                <input type="date" class="form-control" id="date4" style="width:150px;">
+            </td>
+            <td>
+                <input type="date" class="form-control" id="date5" style="width:150px;">
+            </td>
+            <td>
+                <input type="date" class="form-control" id="date6" style="width:150px;">
+            </td>
+
+        </tr>
+        <tr>
+            <td>시간</td>
+            <td>
+                <input type="time" class="form-control" id="time1" style="width:150px;">
+            </td>
+            <td>
+                <input type="time" class="form-control" id="time2" style="width:150px;">
+            </td>
+            <td>
+                <input type="time" class="form-control" id="time3" style="width:150px;">
+            </td>
+            <td>
+                <input type="time" class="form-control" id="time4" style="width:150px;">
+            </td>
+            <td>
+                <input type="time" class="form-control" id="time5" style="width:150px;">
+            </td>
+            <td>
+                <input type="time" class="form-control" id="time6" style="width:150px;">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary" style="float: right;">제출하기</button>
+        </div>
+    </div>
+</form>
+
+<!-- Popper JS -->
+<script src="assets/js/popper.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="assets/js/bootstrap.min.js"></script>
+<!-- Plugins JS -->
+<script src="assets/js/plugins.js"></script>
+<!-- Ajax Mail -->
+<script src="assets/js/ajax-mail.js"></script>
+<!-- Main JS -->
+<script src="assets/js/main.js"></script>
+<!-- Submit the Form to Google Using "AJAX" -->
+<script data-cfasync="false" src="assets/js/form-submission-handler.js"></script>
 </body>
 
 </html>

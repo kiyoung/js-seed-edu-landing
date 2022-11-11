@@ -9,15 +9,51 @@
 <body>
 <%- include ('navbar.html') %>
 
+
 <div id="gfg">
     <ul>
-        <li><a href="#gfg1">Tab 1</a></li>
-        <li><a href="#gfg2">Tab 2</a></li>
-        <li><a href="#gfg3">Tab 3</a></li>
+        <li><a href="#gfg1">1차</a></li>
+        <li><a href="#gfg2">2차</a></li>
+        <li><a href="#gfg3">3차</a></li>
     </ul>
 
     <div id="gfg1">
-        <p>tab Number -1</p>
+        <form>
+            <fieldset class="form-group row">
+                <legend class="col-form-label col-sm-2 float-sm-left pt-0">성별</legend>
+                <div class="col-sm-10">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                               value="option1">
+                        <label class="form-check-label" for="inlineRadio1">남자</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                               value="option2">
+                        <label class="form-check-label" for="inlineRadio2">여자</label>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="form-group row">
+                <label for="inputName" class="col-sm-2 col-form-label">이름</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputName" placeholder="이름을 입력하세요"
+                           style="width:200px;" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputEmail" class="col-sm-2 col-form-label">이메일</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail" placeholder="이메일 주소"
+                           style="width:300px;" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">제출하기</button>
+                </div>
+            </div>
+        </form>
     </div>
 
     <div id="gfg2">
