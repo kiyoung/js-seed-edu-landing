@@ -9,30 +9,30 @@ let authInfo;
 // const credentials = { key: privateKey, cert: certificate, ca: ca }
 
 // nodemailer.createTransport에 필요한 접속 정보 json parsing
-fs.readFile('./auth.json', (err, data) => {
-    if (err) {
-        throw err
-    }
-    authInfo = JSON.parse(data.toString());
-    console.log("authInfo: "+ authInfo);    // data 읽어옴
-})
+// fs.readFile('./auth.json', (err, data) => {
+//     if (err) {
+//         throw err
+//     }
+//     authInfo = JSON.parse(data.toString());
+//     console.log("authInfo: "+ authInfo);    // data 읽어옴
+// })
 
-console.log("authInfo: "+ authInfo);    // undefined
+// console.log("authInfo: "+ authInfo);    // undefined
 
-const smtpTransport = nodemailer.createTransport({
-    host: authInfo.hostInfo,
-    port: authInfo.portInfo,
-    service: authInfo.service,
-    secure: false,
-    requireTLS: true,
-    auth: {
-        user: authInfo.email,
-        pass: authInfo.passwd
-    },
-    logger: true
-});
+// const smtpTransport = nodemailer.createTransport({
+//     host: authInfo.hostInfo,
+//     port: authInfo.portInfo,
+//     service: authInfo.service,
+//     secure: false,
+//     requireTLS: true,
+//     auth: {
+//         user: authInfo.email,
+//         pass: authInfo.passwd
+//     },
+//     logger: true
+// });
 
-console.log("smtpTransport: " + smtpTransport);
+// console.log("smtpTransport: " + smtpTransport);
 
 const express = require('express');
 const app = express();
@@ -84,16 +84,21 @@ app.get('/test', (req, res) => {
     res.render(test);
 })
 
-app.get('/mail', async (req, res) => {
-    const info = await smtpTransport.sendMail({
-        from: '"mySelf" <seedconsulting2022@gmail.com>',
-        to: "seedconsulting2022@gmail.com",
-        subject: "Hello from node",
-        text: "Hello world?",
-        html: "<strong>Hello world?</strong>",
-        headers: {'x-myheader': 'test header'}
-    });
-
-    console.log("Message sent: %s", info.response);
-    res.send('Hello world!')
+app.get('/reference_2nd3rd', (req, res) => {
+    res.sendFile('reference_2nd3rd.html', {root: 'views'});
 })
+
+
+// app.get('/mail', async (req, res) => {
+//     const info = await smtpTransport.sendMail({
+//         from: '"mySelf" <seedconsulting2022@gmail.com>',
+//         to: "seedconsulting2022@gmail.com",
+//         subject: "Hello from node",
+//         text: "Hello world?",
+//         html: "<strong>Hello world?</strong>",
+//         headers: {'x-myheader': 'test header'}
+//     });
+//
+//     console.log("Message sent: %s", info.response);
+//     res.send('Hello world!')
+// })
