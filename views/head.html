@@ -1,41 +1,28 @@
-<meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
+<!DOCTYPE html>
+<html lang="ko">
 
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-<!-- Favicon -->
-<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>씨앗학원</title>
+  <%-include('./vendors.ejs')%>
+  <style type="text/css">
+    @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
 
-<!-- CSS ============================================ -->
-
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-
-<!-- Icon Font CSS -->
-<link rel="stylesheet" href="assets/css/icons.min.css">
-
-<!-- Plugins CSS -->
-<link rel="stylesheet" href="assets/css/plugins.css">
-
-<!-- Main Style CSS -->
-<link rel="stylesheet" href="assets/css/style.css">
-
-<!-- Modernizer JS -->
-<script src="assets/js/vendor/modernizr-3.11.7.min.js"></script>
-
-
-<!--additional JS/CSS-->
-<link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
-
-<!--<script src="https://code.jquery.com/jquery-1.10.2.js"></script>-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js">
-</script>
-
-<script>
-    $(function () {
-        $("#gfg").tabs();
-        $("#gfg").tabs("load", 0);
+    body {
+      font-family: 'Nanum Gothic';
+      font-weight: 800;
+      font-stretch: normal;
+    }
+  </style>
+  <script>
+    $(function() {
+      $("#gfg").tabs();
+      $("#gfg").tabs("load", 0);
     });
-</script>
+  </script>
+</head>
+
+<body>

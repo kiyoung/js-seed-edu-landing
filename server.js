@@ -45,7 +45,7 @@ const consulting = "consulting";
 const reference_table = "reference_table";
 const test = "test";
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 // const client = require('') // DB
 app.set('view engine', 'ejs');
@@ -60,13 +60,15 @@ let corsOptions = {
 app.use(cors(corsOptions));
 
 app.listen(port, function () {
-    console.log(`listening on port ${port}`);
+    console.log(`http://localhost`);
 });
 
 // http.createServer(app).listen(80)
 // https.createServer(credentials, app).listen(443)
 
 // main page
+app.use("/vendors", require("./라우터/공급사"));
+
 app.get('/', (req, res) => {
     res.render(index);
 })
@@ -84,7 +86,7 @@ app.get('/test', (req, res) => {
 })
 
 app.get('/reference_2nd3rd', (req, res) => {
-    res.sendFile('reference_2nd3rd.html', {root: 'views'});
+    res.sendFile('reference_2nd3rd.html', { root: 'views' });
 })
 
 

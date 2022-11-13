@@ -2,67 +2,46 @@
 <html lang="en">
 
 <head>
-    <%- include ('head.html') %>
-    <title>Reference Table</title>
-    <link href='../node_modules/fullcalendar/main.css' rel='stylesheet' />
-    <script src='../node_modules/fullcalendar/main.js'></script>
-    <script>
-
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth'
-            });
-            calendar.render();
-        });
-
-    </script>
+  <%- include ('head.html') %>
+  <title>Reference Table</title>
+  <link href='../node_modules/fullcalendar/main.css' rel='stylesheet' />
+  <script src='../node_modules/fullcalendar/main.js'></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth'
+      });
+      calendar.render();
+    });
+  </script>
 </head>
 
 <body>
-<%- include ('navbar.html') %>
+  <%- include ('navbar.html') %>
 
-<div id='calendar'></div>
+  <div id='calendar'></div>
 
-<div id="gfg">
+  <div id="gfg">
     <ul>
-        <li><a href="#gfg1">1차</a></li>
-        <li><a href="#gfg2">2차</a></li>
-        <li><a href="#gfg3">3차</a></li>
+      <li><a href="#gfg1">1차</a></li>
+      <li><a href="#gfg2">2차</a></li>
+      <li><a href="#gfg3">3차</a></li>
     </ul>
 
     <div id="gfg1">
-        <%- include ('reference_1st.html') %>
+      <%- include ('1차.html') %>
     </div>
 
     <div id="gfg2">
-        <%- include ('reference_2nd3rd.html') %>
-        <%- include ('consulting_2nd3rd.html') %>
+      <%- include ('2차.html') %>
     </div>
     <div id="gfg3">
-        <p>tab Number -3</p>
+      <%- include ('3차.html') %>
     </div>
-</div>
+  </div>
 
-<!--<div id="tabs">-->
-<!--    <ul>-->
-<!--        <li><a href="#tabs-1">Nunc tincidunt</a></li>-->
-<!--        <li><a href="#tabs-2">Proin dolor</a></li>-->
-<!--        <li><a href="#tabs-3">Aenean lacinia</a></li>-->
-<!--    </ul>-->
-<!--    <div id="tabs-1">-->
-<!--        <p>1111111111111111</p>-->
-<!--    </div>-->
-<!--    <div id="tabs-2">-->
-<!--        <p>2222222222222222</p>-->
-<!--    </div>-->
-<!--    <div id="tabs-3">-->
-<!--        <p>33333333333333333</p>-->
-<!--    </div>-->
-<!--</div>-->
-
-
-<%- include ('footer.html') %>
+  <%- include ('footer.html') %>
 </body>
 
 </html>
