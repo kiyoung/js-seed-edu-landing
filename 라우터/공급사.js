@@ -10,7 +10,6 @@ vendorsRouter.use(
 
 vendorsRouter.use(
     "/jquery",
-
     express.static(path.join(__dirname, "../node_modules/jquery/dist"))
 );
 vendorsRouter.use(
