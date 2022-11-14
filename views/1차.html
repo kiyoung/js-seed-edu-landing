@@ -16,35 +16,37 @@
     .form-control {
         height: 38px;
     }
-
 </style>
 
 
 <div class="container">
     <form method="post" action="/mail">
         <span style="font-size: small">성별</span>
-        <div class="form-check ">
-            <input class="form-check-input" type="radio" name="sex" id="male" value="male" checked>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="sex" id="male" value="남자" checked>
             <label class="form-check-label" for="male">남자</label>
         </div>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="sex" id="female" value="female">
+            <input class="form-check-input" type="radio" name="sex" id="female" value="여자">
             <label class="form-check-label" for="female">여자</label>
         </div>
         <div class="input-group mb-3 form-control-width">
-            <span class="input-group-text" id="basic-addon1" style="width: 75px">이름</span>
-            <input type="text" class="form-control form-control-width" placeholder="name" aria-label="name"
-                   aria-describedby="basic-addon1" required>
+            <label for="name"><span class="input-group-text" id="basic-addon1" style="width: 75px">이름</span></label>
+            <input type="text" class="form-control form-control-width" name="name" placeholder="name" id="name"
+                   required>
         </div>
         <div class="input-group mb-3 form-control-width">
-            <span class="input-group-text" id="basic-addon3" style="width: 75px">연락처</span>
-            <input type="text" class="form-control form-control-width" placeholder="연락처" aria-label="phone"
-                   aria-describedby="basic-addon3" required>
+            <label for="contact">
+                <span class="input-group-text" id="basic-addon3" style="width: 75px">연락처</span>
+            </label>
+            <input type="text" class="form-control form-control-width" placeholder="연락처" id="contact" name="contact" required>
         </div>
         <div class="input-group mb-3 form-control-width">
-            <span class="input-group-text" id="basic-addon2" style="width: 75px">이메일</span>
-            <input type="email" class="form-control " placeholder="seed@example.com" aria-label="mail"
-                   aria-describedby="basic-addon2" required>
+            <label for="email">
+                <span class="input-group-text" id="basic-addon2" style="width: 75px">이메일</span>
+            </label>
+            <input type="email" class="form-control " placeholder="seed@example.com" id="email" name="email"
+                   required>
         </div>
         <div class="row">
             <div class="card border-dark text-dark mt-4 shadow col-md-5">
@@ -53,17 +55,22 @@
                 </h5>
                 <div class="card-body">
                     <div class="input-group mb-1">
-                        <span class="input-group-text mb-1 addon" style="margin: 0">선택과목</span>
-                        <select class="form-select rounded-end form-control" aria-label="Default select example"
+                        <label for="korean1">
+                            <span class="input-group-text mb-1 addon" style="margin: 0">선택과목</span>
+                        </label>
+                        <select class="form-select rounded-end form-control" id="korean1" name="elective_subject_korean"
                                 required>
-                            <option value="">과목 선택</option>
-                            <option value="화법과 작문">화법과 작문</option>
-                            <option value="언어와 매체">언어와 매체</option>
+                            <option value="화법과 작문" name="elective_subject_korean" selected>화법과 작문</option>
+                            <option value="언어와 매체" name="elective_subject_korean">언어와 매체</option>
                         </select>
+
                         <div class="input-group mb-1">
-                            <span class="input-group-text mb-1 addon" id="score1">원점수</span>
-                            <input id="score_korean" name="원점수" type="text" class="form-control" placeholder="미입력"
-                                   aria-label="원점수" aria-describedby="원점수" value="" required>
+                            <label for="score_korean">
+                                <span class="input-group-text mb-1 addon" id="score1">원점수</span>
+                            </label>
+                            <input id="score_korean" name="elective_subject_korean" type="number" class="form-control"
+                                   placeholder="미입력"
+                                   value="" min="0" required>
                         </div>
                     </div>
                 </div>
@@ -75,19 +82,21 @@
                 </h5>
                 <div class="card-body">
                     <div class="input-group mb-1">
-                        <span class="input-group-text mb-1 addon rounded-end " style="margin: 0">선택과목</span>
-                        <select class="form-select rounded-end form-control" aria-label="Default select example"
-                                required>
-                            <option value="">과목 선택</option>
-                            <option value="확률과 통계">확률과 통계</option>
-                            <option value="미적분">미적분</option>
-                            <option value="기하">기하</option>
+                        <label for="elective_subject_math">
+                            <span class="input-group-text mb-1 addon rounded-end " style="margin: 0">선택과목</span>
+                        </label>
+                        <select class="form-select rounded-end form-control" id="elective_subject_math"
+                                name="elective_subject_math" required>
+                            <option value="확률과 통계" name="elective_subject_math" selected>확률과 통계</option>
+                            <option value="미적분" name="elective_subject_math">미적분</option>
+                            <option value="기하" name="elective_subject_math">기하</option>
                         </select>
                         <div class="input-group mb-1">
-                            <span class="input-group-text mb-1 addon" id="score2">원점수</span>
-                            <input id="score_math" name="원점수" type="text" class="form-control" placeholder="미입력"
-                                   aria-label="원점수"
-                                   aria-describedby="원점수" value="" required>
+                            <label for="score_math">
+                                <span class="input-group-text mb-1 addon" id="score2">원점수</span>
+                            </label>
+                            <input id="score_math" name="elective_subject_math" type="number" class="form-control"
+                                   placeholder="미입력" value="" min="0" required>
                         </div>
                     </div>
                 </div>
@@ -101,10 +110,12 @@
                     <div class="input-group mb-1">
                         <!--                    <span class="input-group-text mb-1 addon" style="margin: 0">과목</span>-->
                         <div class="input-group mb-1">
-                            <span class="input-group-text mb-1 addon" id="score3">원점수</span>
-                            <input id="score_eng" name="원점수" type="text" class="form-control" placeholder="미입력"
-                                   aria-label="원점수"
-                                   aria-describedby="원점수" value="" required>
+                            <label for="score_eng">
+                                <span class="input-group-text mb-1 addon" id="score3">원점수</span>
+                            </label>
+                            <input id="score_eng" name="elective_subject_english" type="number" class="form-control"
+                                   placeholder="미입력"
+                                   value="" min="0" required>
                         </div>
                     </div>
                 </div>
@@ -116,39 +127,42 @@
                 </h5>
                 <div class="card-body">
                     <div class="input-group mb-1">
-                        <span class="input-group-text mb-1 addon rounded-end" style="margin: 0">탐구영역</span>
-                        <select class="form-select rounded-end form-control" aria-label="Default select example"
+                        <label for="exploration">
+                            <span class="input-group-text mb-1 addon rounded-end" style="margin: 0">탐구영역</span>
+                        </label>
+                        <select class="form-select rounded-end form-control" id="exploration" name="course_exploration"
                                 required>
-                            <option value="">과목 선택</option>
-                            <option value="과학탐구">과학탐구</option>
-                            <option value="사회탐구">사회탐구</option>
-                            <option value="직업탐구">직업탐구</option>
+                            <option value="과학탐구" name="course_exploration" selected>과학탐구</option>
+                            <option value="사회탐구" name="course_exploration">사회탐구</option>
+                            <option value="직업탐구" name="course_exploration">직업탐구</option>
                         </select>
                         <div class="input-group mb-1">
-                            <span class="input-group-text mb-1 addon" id="subject1">선택 과목1</span>
-                            <input id="course_exploration1" name="원점수" type="text" class="form-control"
-                                   placeholder="1과목"
-                                   aria-label="원점수"
-                                   aria-describedby="원점수" value="">
+                            <label for="course_exploration1">
+                                <span class="input-group-text mb-1 addon" id="subject1">선택 과목1</span>
+                            </label>
+                            <input id="course_exploration1" name="elctvCrs1" type="text" class="form-control"
+                                   placeholder="1과목" value="">
                         </div>
                         <div class="input-group mb-1">
-                            <span class="input-group-text mb-1 addon" id="subject2">선택 과목2</span>
-                            <input id="course_exploration2" name="원점수" type="text" class="form-control"
-                                   placeholder="2과목"
-                                   aria-label="원점수"
-                                   aria-describedby="원점수" value="">
+                            <label for="course_exploration2">
+                                <span class="input-group-text mb-1 addon" id="subject2">선택 과목2</span>
+                            </label>
+                            <input id="course_exploration2" name="elctvCrs2" type="text" class="form-control"
+                                   placeholder="2과목" value="">
                         </div>
                         <div class="input-group mb-1">
-                            <span class="input-group-text mb-1 addon" id="score4">원점수1</span>
-                            <input id="score_exploration1" name="원점수" type="text" class="form-control" placeholder="1과목"
-                                   aria-label="원점수"
-                                   aria-describedby="원점수" value="">
+                            <label for="score_exploration1">
+                                <span class="input-group-text mb-1 addon" id="score4">원점수1</span>
+                            </label>
+                            <input id="score_exploration1" name="orgnlScore1" type="number" class="form-control"
+                                   placeholder="미입력" value="" min="0" required>
                         </div>
                         <div class="input-group mb-1">
-                            <span class="input-group-text mb-1 addon" id="score5">원점수2</span>
-                            <input id="score_exploration2" name="원점수" type="text" class="form-control" placeholder="2과목"
-                                   aria-label="원점수"
-                                   aria-describedby="원점수" value="" required>
+                            <label for="score_exploration2">
+                                <span class="input-group-text mb-1 addon" id="score5">원점수2</span>
+                            </label>
+                            <input id="score_exploration2" name="orgnlScore2" type="number" class="form-control"
+                                   placeholder="미입력" value="" min="0" required>
                         </div>
                     </div>
                 </div>
@@ -160,19 +174,23 @@
                 </h5>
                 <div class="card-body">
                     <div class="input-group mb-1">
-                        <span class="input-group-text mb-1 addon" id="univDept1">학교/과</span>
-                        <input id="i_univDept1" name="i_univDept" type="text" class="form-control"
-                               placeholder="학교/학과 입력"
-                               aria-label="학교/학과 입력"
-                               aria-describedby="학교/학과 입력" value="">
+                        <label for="schedule_1">
+                            <span class="input-group-text mb-1 addon" id="univDept1">학교/과</span>
+                        </label>
+                        <input id="schedule_1" name="schedule_1" type="text" class="form-control"
+                               placeholder="학교/학과 입력" value="">
                     </div>
                     <div class="input-group mb-1">
-                        <label for="i_date1"><span class="input-group-text mb1 addon" id="date1">날짜</span></label>
-                        <input type="date" id="i_date1" name="date">
+                        <label for="i_date1">
+                            <span class="input-group-text mb1 addon" id="date1">날짜</span>
+                        </label>
+                        <input type="date" id="i_date1" name="schedule_1">
                     </div>
                     <div class="input-group mb-1">
-                        <label for="i_time1"><span class="input-group-text mb1 addon" id="time1">날짜</span></label>
-                        <input type="time" id="i_time1" name="time">
+                        <label for="i_time1">
+                            <span class="input-group-text mb1 addon" id="time1">시간</span>
+                        </label>
+                        <input type="time" id="i_time1" name="schedule_1">
                     </div>
                 </div>
             </div>
@@ -183,19 +201,24 @@
                 </h5>
                 <div class="card-body">
                     <div class="input-group mb-1">
-                        <span class="input-group-text mb-1 addon" id="univDept2">학교/과</span>
-                        <input id="i_univDept2" name="i_univDept" type="text" class="form-control"
-                               placeholder="학교/학과 입력"
-                               aria-label="학교/학과 입력"
-                               aria-describedby="학교/학과 입력" value="">
+                        <label for="i_univDept2">
+                            <span class="input-group-text mb-1 addon"
+                                  id="univDept2">학교/과</span>
+                        </label>
+                        <input id="i_univDept2" name="schedule_2" type="text" class="form-control"
+                               placeholder="학교/학과 입력" value="">
                     </div>
                     <div class="input-group mb-1">
-                        <label for="i_date2"><span class="input-group-text mb1 addon" id="date2">날짜</span></label>
-                        <input type="date" id="i_date2" name="date">
+                        <label for="i_date2">
+                            <span class="input-group-text mb1 addon" id="date2">날짜</span>
+                        </label>
+                        <input type="date" id="i_date2" name="schedule_2">
                     </div>
                     <div class="input-group mb-1">
-                        <label for="i_time2"><span class="input-group-text mb1 addon" id="time2">날짜</span></label>
-                        <input type="time" id="i_time2" name="time">
+                        <label for="i_time2">
+                            <span class="input-group-text mb1 addon" id="time2">시간</span>
+                        </label>
+                        <input type="time" id="i_time2" name="schedule_2">
                     </div>
                 </div>
             </div>
@@ -206,19 +229,24 @@
                 </h5>
                 <div class="card-body">
                     <div class="input-group mb-1">
-                        <span class="input-group-text mb-1 addon" id="univDept3">학교/과</span>
-                        <input id="i_univDept3" name="i_univDept" type="text" class="form-control"
-                               placeholder="학교/학과 입력"
-                               aria-label="학교/학과 입력"
-                               aria-describedby="학교/학과 입력" value="">
+                        <label for="i_univDept3">
+                            <span class="input-group-text mb-1 addon"
+                                  id="univDept3">학교/과</span>
+                        </label>
+                        <input id="i_univDept3" name="schedule_3" type="text" class="form-control"
+                               placeholder="학교/학과 입력" value="">
                     </div>
                     <div class="input-group mb-1">
-                        <label for="i_date3"><span class="input-group-text mb1 addon" id="date3">날짜</span></label>
-                        <input type="date" id="i_date3" name="date">
+                        <label for="i_date3">
+                            <span class="input-group-text mb1 addon" id="date3">날짜</span>
+                        </label>
+                        <input type="date" id="i_date3" name="schedule_3">
                     </div>
                     <div class="input-group mb-1">
-                        <label for="i_time3"><span class="input-group-text mb1 addon" id="time3">날짜</span></label>
-                        <input type="time" id="i_time3" name="time">
+                        <label for="i_time3">
+                            <span class="input-group-text mb1 addon" id="time3">시간</span>
+                        </label>
+                        <input type="time" id="i_time3" name="schedule_3">
                     </div>
                 </div>
             </div>
@@ -229,19 +257,21 @@
                 </h5>
                 <div class="card-body">
                     <div class="input-group mb-1">
-                        <span class="input-group-text mb-1 addon" id="univDept4">학교/과</span>
-                        <input id="i_univDept4" name="i_univDept" type="text" class="form-control"
-                               placeholder="학교/학과 입력"
-                               aria-label="학교/학과 입력"
-                               aria-describedby="학교/학과 입력" value="">
+                        <label for="i_univDept4">
+                            <span class="input-group-text mb-1 addon" id="univDept4">학교/과</span>
+                        </label>
+                        <input id="i_univDept4" name="schedule_4" type="text" class="form-control"
+                               placeholder="학교/학과 입력" value="">
                     </div>
                     <div class="input-group mb-1">
-                        <label for="i_date4"><span class="input-group-text mb1 addon" id="date4">날짜</span></label>
-                        <input type="date" id="i_date4" name="date">
+                        <label for="i_date4">
+                            <span class="input-group-text mb1 addon" id="date4">날짜</span>
+                        </label>
+                        <input type="date" id="i_date4" name="schedule_4">
                     </div>
                     <div class="input-group mb-1">
-                        <label for="i_time4"><span class="input-group-text mb1 addon" id="time4">날짜</span></label>
-                        <input type="time" id="i_time4" name="time">
+                        <label for="i_time4"><span class="input-group-text mb1 addon" id="time4">시간</span></label>
+                        <input type="time" id="i_time4" name="schedule_4">
                     </div>
                 </div>
             </div>
@@ -252,19 +282,23 @@
                 </h5>
                 <div class="card-body">
                     <div class="input-group mb-1">
-                        <span class="input-group-text mb-1 addon" id="univDept5">학교/과</span>
-                        <input id="i_univDept5" name="i_univDept" type="text" class="form-control"
-                               placeholder="학교/학과 입력"
-                               aria-label="학교/학과 입력"
-                               aria-describedby="학교/학과 입력" value="">
+                        <label for="i_univDept5">
+                            <span class="input-group-text mb-1 addon" id="univDept5">학교/과</span>
+                        </label>
+                        <input id="i_univDept5" name="schedule_5" type="text" class="form-control"
+                               placeholder="학교/학과 입력" value="">
                     </div>
                     <div class="input-group mb-1">
-                        <label for="i_date5"><span class="input-group-text mb1 addon" id="date5">날짜</span></label>
-                        <input type="date" id="i_date5" name="date">
+                        <label for="i_date5">
+                            <span class="input-group-text mb1 addon" id="date5">날짜</span>
+                        </label>
+                        <input type="date" id="i_date5" name="schedule_5">
                     </div>
                     <div class="input-group mb-1">
-                        <label for="i_time5"><span class="input-group-text mb1 addon" id="time5">날짜</span></label>
-                        <input type="time" id="i_time5" name="time">
+                        <label for="i_time5">
+                            <span class="input-group-text mb1 addon" id="time5">시간</span>
+                        </label>
+                        <input type="time" id="i_time5" name="schedule_5">
                     </div>
                 </div>
             </div>
@@ -275,19 +309,23 @@
                 </h5>
                 <div class="card-body">
                     <div class="input-group mb-1">
-                        <span class="input-group-text mb-1 addon" id="univDept6">학교/과</span>
-                        <input id="i_univDept6" name="i_univDept" type="text" class="form-control"
-                               placeholder="학교/학과 입력"
-                               aria-label="학교/학과 입력"
-                               aria-describedby="학교/학과 입력" value="">
+                        <label for="i_univDept6">
+                            <span class="input-group-text mb-1 addon" id="univDept6">학교/과</span>
+                        </label>
+                        <input id="i_univDept6" name="schedule_6" type="text" class="form-control"
+                               placeholder="학교/학과 입력" value="">
                     </div>
                     <div class="input-group mb-1">
-                        <label for="i_date6"><span class="input-group-text mb1 addon" id="date6">날짜</span></label>
-                        <input type="date" id="i_date6" name="date">
+                        <label for="i_date6">
+                            <span class="input-group-text mb1 addon" id="date6">날짜</span>
+                        </label>
+                        <input type="date" id="i_date6" name="schedule_6">
                     </div>
                     <div class="input-group mb-1">
-                        <label for="i_time6"><span class="input-group-text mb1 addon" id="time6">날짜</span></label>
-                        <input type="time" id="i_time6" name="time">
+                        <label for="i_time6">
+                            <span class="input-group-text mb1 addon" id="time6">시간</span>
+                        </label>
+                        <input type="time" id="i_time6" name="schedule_6">
                     </div>
                 </div>
             </div>

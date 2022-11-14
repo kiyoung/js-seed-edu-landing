@@ -10,6 +10,9 @@
 .navbar-nav .nav-link.active {
     color: #ffffff;
 }
+.navbar-brand{
+    color: #ffffff;
+}
 
 .ui-widget-header {
     border: 1px solid #e78f08;
@@ -35,4 +38,8 @@
     font-family: 'Nanum Gothic', sans-serif;
     font-weight: 800;
     font-stretch: normal;
+}
+
+.form-check-inline{
+    width: 170px;
 }
