@@ -1,4 +1,4 @@
-const http = require("http")
+// const http = require("http")
 const https = require("https")
 const fs = require("fs");
 const nodemailer = require("nodemailer");
@@ -62,12 +62,27 @@ let corsOptions = {
 // cors 옵션에 따라 cors 허용
 app.use(cors(corsOptions));
 
-// app.listen(port, function () {
-//     console.log(`http://localhost`);
-// });
+app.listen(port, function () {
+    console.log(`http://localhost`);
+});
 
-http.createServer(app).listen(80)
+// http.createServer(app).listen(80)
 https.createServer(credentials, app).listen(443)
+
+app.get("*", (req, res, next) => {
+    console.log("req.secure == " + req.secure);
+
+    if(req.secure){
+        // --- https
+        next();
+    }else{
+        // -- http
+        let to = "https://" + req.headers.host + req.url;
+        console.log("to ==> " + to);
+
+        return res.redirect("https://" + req.headers.host + req.url);
+    }
+})
 
 // main page
 app.use("/vendors", require("./라우터/공급사"));
