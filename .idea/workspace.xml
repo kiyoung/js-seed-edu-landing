@@ -2,17 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85990f6a-b425-4ff3-ac21-892c42739c41" name="변경" comment="commit 22.11.14">
+      <change afterPath="$PROJECT_DIR$/public/css/head.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/price_list-copy.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/1차.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/1차.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/2차.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/2차.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/3차.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/3차.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/consulting.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/consulting.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/head.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/reference_table.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/reference_table.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/test.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/test.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -33,11 +47,7 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="feature/221114" />
-                    <option name="lastUsedInstant" value="1668361094" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="feature/221113" />
-                    <option name="lastUsedInstant" value="1668361093" />
+                    <option name="lastUsedInstant" value="1668408673" />
                   </RecentBranch>
                 </list>
               </option>
@@ -59,19 +69,24 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2HUvy25HFH6A5id9kWqYhY06T7Y" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "javascript.nodejs.core.library.configured.version": "16.18.0",
-    "javascript.nodejs.core.library.typings.version": "16.18.0",
+    "javascript.nodejs.core.library.configured.version": "18.12.0",
+    "javascript.nodejs.core.library.typings.version": "18.11.9",
+    "list.type.of.created.stylesheet": "CSS",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.GitToolBox Colors",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "ts.external.directory.path": "E:\\Program Files\\JetBrains\\apps\\WebStorm\\ch-0\\222.4345.14\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
@@ -86,6 +101,7 @@
       <updated>1668352728163</updated>
       <workItem from="1668352729398" duration="4693000" />
       <workItem from="1668387583257" duration="13418000" />
+      <workItem from="1668410954259" duration="14944000" />
     </task>
     <task id="LOCAL-00001" summary="commit 22.11.14">
       <created>1668361106283</created>
@@ -112,6 +128,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="commit 22.11.14" />
     <option name="LAST_COMMIT_MESSAGE" value="commit 22.11.14" />
   </component>

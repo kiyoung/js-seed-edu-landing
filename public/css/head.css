@@ -1,0 +1,38 @@
+:root{
+    /*--primary : #213159;*/
+    --primary : #3d6098;
+    --secondary : #f4af1B;
+    --bs-border-radius: 0.375rem;
+}
+.navbar{
+    background-color: var(--primary);
+}
+.navbar-nav .nav-link.active {
+    color: #ffffff;
+}
+
+.ui-widget-header {
+    border: 1px solid #e78f08;
+    background: var(--secondary);
+    color: #fff;
+    font-weight: bold;
+}
+
+.card{
+    margin: 10px;
+}
+
+.form-control-width{
+    width: 300px;
+}
+
+.form-check{
+    padding-left: 2em;
+    align-self: center;
+}
+
+.text-primary .form-check-label .input-group-text{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 800;
+    font-stretch: normal;
+}
