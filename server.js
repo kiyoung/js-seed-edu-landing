@@ -17,7 +17,6 @@ fs.readFile("./auth.json", async (err, data) => {
     authInfo = await JSON.parse(data.toString());
 });
 
-// console.log("authInfo: "+ authInfo);    // undefined
 async function makeTransport() {
     smtpTransport = await nodemailer.createTransport({
         host: authInfo.hostInfo,
@@ -38,10 +37,10 @@ const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-app.get("*", (req, res) => {
-    let to = "https://" +  req.headers.host + req.url;
-    res.redirect(to)
-})
+// app.get("*", (req, res) => {
+//     let to = "https://" +  req.headers.host + req.url;
+//     res.redirect(to)
+// })
 
 const port = 80;
 const index = "index";
@@ -63,11 +62,11 @@ let corsOptions = {
 // cors 옵션에 따라 cors 허용
 app.use(cors(corsOptions));
 
-app.listen(port, function () {
-    console.log(`http://localhost`);
-});
+// app.listen(port, function () {
+//     console.log(`http://localhost`);
+// });
 
-// http.createServer(app).listen(80)
+http.createServer(app).listen(80)
 https.createServer(credentials, app).listen(443)
 
 // main page
