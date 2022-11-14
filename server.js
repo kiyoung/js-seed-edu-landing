@@ -1,23 +1,21 @@
-// const http = require("http")
-// const https = require("https")
+const http = require("http")
+const https = require("https")
 const fs = require("fs");
 const nodemailer = require("nodemailer");
 let authInfo;
 let smtpTransport;
-// var privateKey = fs.readFileSync("/etc/letsencrypt/live/seedconsulting.co.kr/privkey.pem")
-// var certificate = fs.readFileSync("/etc/letsencrypt/live/seedconsulting.co.kr/cert.pem")
-// var ca = fs.readFileSync("/etc/letsencrypt/live/seedconsulting.co.kr/chain.pem")
-// const credentials = { key: privateKey, cert: certificate, ca: ca }
+var privateKey = fs.readFileSync("/etc/letsencrypt/live/seedconsulting.co.kr/privkey.pem")
+var certificate = fs.readFileSync("/etc/letsencrypt/live/seedconsulting.co.kr/cert.pem")
+var ca = fs.readFileSync("/etc/letsencrypt/live/seedconsulting.co.kr/chain.pem")
+const credentials = { key: privateKey, cert: certificate, ca: ca }
 
 // nodemailer.createTransport에 필요한 접속 정보 json parsing
-// async function getConnectionInfo(jsonAuth) {
 fs.readFile("./auth.json", async (err, data) => {
     if (err) {
         throw err;
     }
     authInfo = await JSON.parse(data.toString());
 });
-// }
 
 // console.log("authInfo: "+ authInfo);    // undefined
 async function makeTransport() {
@@ -34,8 +32,6 @@ async function makeTransport() {
         logger: true,
     });
 }
-
-console.log("after makeTransport(): " + smtpTransport);
 
 const express = require("express");
 const app = express();
@@ -67,7 +63,7 @@ app.listen(port, function () {
 });
 
 // http.createServer(app).listen(80)
-// https.createServer(credentials, app).listen(443)
+https.createServer(credentials, app).listen(443)
 
 // main page
 app.use("/vendors", require("./라우터/공급사"));
