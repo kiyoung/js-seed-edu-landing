@@ -1,88 +1,185 @@
- <style>
-   .addon {
-     width: 100px;
-     margin: 0 auto;
-     display: block;
-     text-align: center;
-     background-color: #3c454d;
-     color: #ffffff;
-     font-weight: 700;
-   }
+<style>
+    .addon {
+        width: 100px;
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+        background-color: #3c454d;
+        color: #ffffff;
+        font-weight: 700;
+    }
 
-   .card {
-     background: #ffFF00;
-   }
- </style>
- <div class="card border-dark text-dark mt-4 shadow">
-   <h5 class="card-header fw-bolder" id="label">
-     <span class="text-primary">
-       국어
-     </span>
-   </h5>
-   <div class="card-body">
-     <div class="input-group mb-1">
-       <span class="input-group-text mb-1 addon">부&nbsp;&nbsp;서</span>
-       <div class="form-check">
-         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-         <label class="form-check-label" for="exampleRadios1">
-           남
-         </label>
-       </div>
-       <div class="form-check">
-         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-         <label class="form-check-label" for="exampleRadios2">
-           여
-         </label>
-       </div>
-     </div>
-     <div class="input-group mb-1">
-       <span class="input-group-text mb-1 addon">학&nbsp;&nbsp;년</span>
-       <select name="i_grade" id="i_grade" class="form-select form-select mb-1" aria-label=".form-select">
-         <option value="4학년" ${selected_grade=="4학년" ? "selected" : "" }>4학년</option>
-         <option value="5학년" ${selected_grade=="5학년" ? "selected" : "" }>5학년</option>
-         <option value="6학년" ${selected_grade=="6학년" ? "selected" : "" }>6학년</option>
-       </select>
-     </div>
-     <div class="input-group mb-1">
-       <span class="input-group-text mb-1 addon">학&nbsp;&nbsp;반</span>
-       <select name="i_class" id="i_class" class="form-select form-select mb-1" aria-label=".form-select">
-         <option value="1반" ${ selected_class=="1반" ? "selected" : "" }>1반</option>
-         <option value="2반" ${ selected_class=="2반" ? "selected" : "" }>2반</option>
-         <option value="3반" ${ selected_class=="3반" ? "selected" : "" }>3반</option>
-         <option value="4반" ${ selected_class=="4반" ? "selected" : "" }>4반</option>
-         <option value="5반" ${ selected_class=="5반" ? "selected" : "" }>5반</option>
-       </select>
-     </div>
-     <div class="input-group mb-1">
-       <span class="input-group-text mb-1 addon">성&nbsp;&nbsp;별</span>
-       <select name="i_gender" id="i_gender" class="form-select form-select mb-1" aria-label="" required>
-         <option value="남" }>남</option>
-         <option value="여" }>여</option>
-       </select>
-     </div>
-     <div class="input-group mb-1">
-       <span class="input-group-text addon" id="i_name">이름</span>
-       <input id="i_name" name="i_name" type="text" class="form-control" placeholder="미입력" aria-label="이름" aria-describedby="i_name" value="">
-     </div>
-     <div class="input-group mb-1">
-       <span class="input-group-text addon" id="i_birth">생년월일</span>
-       <input id="i_birth" name="i_birth" type="text" class="form-control birthpicker" placeholder="미입력" aria-label="생년월일" aria-describedby="i_birth" value="">
-     </div>
-     <div class="input-group mb-1">
-       <span class="input-group-text addon">주&nbsp;&nbsp;소</span>
-       <textarea id="i_address" name="i_address" class="form-control resizeable" placeholder="미입력"></textarea>
-     </div>
-     <div class="input-group mb-1">
-       <span class="input-group-text addon" id="i_phone1">학생번호</span>
-       <input id="i_phone1" name="i_phone1" type="text" class="form-control" placeholder="미입력" aria-label="학생번호" aria-describedby="i_phone1" value="">
-     </div>
-     <div class="input-group mb-1">
-       <span class="input-group-text addon" id="i_phone2">부모번호</span>
-       <input id="i_phone2" name="i_phone2" type="text" class="form-control" placeholder="미입력" aria-label="부보번호" aria-describedby="i_phone2" value="">
-     </div>
-     <div>
-       <div class="card-footer">
-         <button id="submit_NEW" type="submit" class="btn btn-primary mb-3">추가</button>
-         <button id="student_add_cancel" type="submit" class="btn btn-danger mb-3">취소</button>
-       </div>
-     </div>
+    .card {
+        background: #ffffff;
+    }
+
+    .form-control {
+        height:38px;
+    }
+
+</style>
+
+
+<div class="container">
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="sex" id="male" value="male" checked>
+        <label class="form-check-label" for="male">남자</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="sex" id="female" value="female">
+        <label class="form-check-label" for="female">여자</label>
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">이름</span>
+        <input type="text" class="form-control" placeholder="name" aria-label="name" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon2">이메일</span>
+        <input type="text" class="form-control" placeholder="seed@example.com" aria-label="mail"
+               aria-describedby="basic-addon1">
+    </div>
+    <div class="row">
+        <div class="card border-dark text-dark mt-4 shadow col-md-6">
+            <h5 class="card-header fw-bolder" id="course1">
+                <span class="text-primary">국어</span>
+            </h5>
+            <div class="card-body">
+                <div class="input-group mb-1">
+                    <span class="input-group-text mb-1 addon" style="margin: 0">과목</span>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="korean" id="korean1" checked>
+                        <label class="form-check-label" for="korean1">화법과 작문</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="korean" id="korean2">
+                        <label class="form-check-label" for="korean2">언어와 매체</label>
+                    </div>
+                    <div class="input-group mb-1">
+                        <span class="input-group-text mb-1 addon" id="score1">원점수</span>
+                        <input id="score_korean" name="원점수" type="text" class="form-control" placeholder="미입력"
+                               aria-label="원점수"
+                               aria-describedby="원점수" value="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card border-dark text-dark mt-4 shadow col-md-6">
+            <h5 class="card-header fw-bolder" id="course2">
+                <span class="text-primary">수학</span>
+            </h5>
+            <div class="card-body">
+                <div class="input-group mb-1">
+                    <span class="input-group-text mb-1 addon" style="margin: 0">과목</span>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="math" id="math1" checked>
+                        <label class="form-check-label" for="math1">확률과 통계</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="math" id="math2">
+                        <label class="form-check-label" for="math2">미적분</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="math" id="math3">
+                        <label class="form-check-label" for="math3">기하</label>
+                    </div>
+
+                    <div class="input-group mb-1">
+                        <span class="input-group-text mb-1 addon" id="score2">원점수</span>
+                        <input id="score_math" name="원점수" type="text" class="form-control" placeholder="미입력"
+                               aria-label="원점수"
+                               aria-describedby="원점수" value="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card border-dark text-dark mt-4 shadow col-md-6">
+            <h5 class="card-header fw-bolder" id="course3">
+                <span class="text-primary">영어</span>
+            </h5>
+            <div class="card-body">
+                <div class="input-group mb-1">
+<!--                    <span class="input-group-text mb-1 addon" style="margin: 0">과목</span>-->
+                    <div class="input-group mb-1">
+                        <span class="input-group-text mb-1 addon" id="score3">원점수</span>
+                        <input id="score_eng" name="원점수" type="text" class="form-control" placeholder="미입력"
+                               aria-label="원점수"
+                               aria-describedby="원점수" value="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card border-dark text-dark mt-4 shadow col-md-6">
+            <h5 class="card-header fw-bolder" id="course4">
+                <span class="text-primary">탐구</span>
+            </h5>
+            <div class="card-body">
+                <div class="input-group mb-1">
+                    <span class="input-group-text mb-1 addon" style="margin: 0">과목</span>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exploration" id="exploration1" checked>
+                        <label class="form-check-label" for="exploration1">과학탐구</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exploration" id="exploration2">
+                        <label class="form-check-label" for="exploration2">사회탐구</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exploration" id="exploration3">
+                        <label class="form-check-label" for="exploration3">직업탐구</label>
+                    </div>
+                    <div class="input-group mb-1">
+                        <span class="input-group-text mb-1 addon" id="subject1">선택 과목1</span>
+                        <input id="course_exploration1" name="원점수" type="text" class="form-control" placeholder="1과목"
+                               aria-label="원점수"
+                               aria-describedby="원점수" value="">
+                    </div>
+                    <div class="input-group mb-1">
+                        <span class="input-group-text mb-1 addon" id="subject2">선택 과목2</span>
+                        <input id="course_exploration2" name="원점수" type="text" class="form-control" placeholder="2과목"
+                               aria-label="원점수"
+                               aria-describedby="원점수" value="">
+                    </div>
+                    <div class="input-group mb-1">
+                        <span class="input-group-text mb-1 addon" id="score4">원점수1</span>
+                        <input id="score_exploration1" name="원점수" type="text" class="form-control" placeholder="1과목"
+                               aria-label="원점수"
+                               aria-describedby="원점수" value="">
+                    </div>
+                    <div class="input-group mb-1">
+                        <span class="input-group-text mb-1 addon" id="score5">원점수2</span>
+                        <input id="score_exploration2" name="원점수" type="text" class="form-control" placeholder="2과목"
+                               aria-label="원점수"
+                               aria-describedby="원점수" value="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card border-dark text-dark mt-4 shadow col-md-6">
+            <h5 class="card-header fw-bolder" id="course5">
+                <span class="text-primary">수시 대학별 고사 일정 입력</span>
+            </h5>
+            <div class="card-body">
+                <div class="input-group mb-1">
+                    <span class="input-group-text mb-1 addon" id="univDept">학교/과</span>
+                    <input id="i_univDept" name="i_univDept" type="text" class="form-control" placeholder="학교/학과 입력"
+                           aria-label="학교/학과 입력"
+                           aria-describedby="학교/학과 입력" value="">
+                </div>
+                <div class="input-group mb-1">
+                    <label for="i_date"><span class="input-group-text mb1 addon" id="date">날짜</span></label>
+                    <input type="date" id="i_date" name="date">
+                </div>
+                <div class="input-group mb-1">
+                    <label for="i_time"><span class="input-group-text mb1 addon" id="time">날짜</span></label>
+                    <input type="time" id="i_time" name="time">
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
