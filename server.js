@@ -38,6 +38,11 @@ const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
+app.get("*", (req, res) => {
+    let to = "https://" +  req.headers.host + req.url;
+    res.redirect(to)
+})
+
 const port = 80;
 const index = "index";
 const consulting = "consulting";
