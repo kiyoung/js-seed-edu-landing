@@ -48,7 +48,7 @@ const consulting = "consulting";
 const reference_table = "reference_table";
 const test = "test";
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 // const client = require('') // DB
 app.set("view engine", "ejs");
@@ -72,10 +72,10 @@ https.createServer(credentials, app).listen(443)
 app.get("*", (req, res, next) => {
     console.log("req.secure == " + req.secure);
 
-    if(req.secure){
+    if (req.secure) {
         // --- https
         next();
-    }else{
+    } else {
         // -- http
         let to = "https://" + req.headers.host + req.url;
         console.log("to ==> " + to);
@@ -104,7 +104,7 @@ app.get("/test", (req, res) => {
 });
 
 app.get("/reference_2nd3rd", (req, res) => {
-    res.sendFile("reference_2nd3rd.html", {root: "views"});
+    res.sendFile("reference_2nd3rd.html", { root: "views" });
 });
 
 app.post("/mail", async (req, res) => {
@@ -490,13 +490,13 @@ app.post("/mail", async (req, res) => {
 
     await makeTransport();
     await smtpTransport.sendMail({
-        from: '"mySelf" <seedconsulting2022@gmail.com>',
-        to: "seedconsulting2022@gmail.com",
+        from: '"컨설팅요청" <seedconsulting2022@gmail.com>',
+        to: "rushkim19@hanmail.net",
         subject: "2023 수능 컨설팅 요청이 접수되었습니다",
         // text: "Hello world?",
         // html: "<strong>Hello world?</strong>",
         html: htmlInfo,
-        headers: {"x-myheader": "test header"},
+        headers: { "x-myheader": "test header" },
     });
 
     res.redirect("/");
